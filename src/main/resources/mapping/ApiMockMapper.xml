@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gateway.mapper.ApiMockMapper">
+
+    <resultMap id="baseResultMap" type="com.gateway.mapper.entity.ApiMock">
+        <result column="urlPattern" jdbcType="VARCHAR" property="urlPattern" />
+        <result column="responseBody" jdbcType="VARCHAR" property="responseBody" />
+    </resultMap>
+
+    <select id="selectApiMock" resultType="com.gateway.mapper.entity.ApiMock">
+        select * from apiMock where urlPattern = #{urlPattern}
+    </select>
+
+</mapper>
